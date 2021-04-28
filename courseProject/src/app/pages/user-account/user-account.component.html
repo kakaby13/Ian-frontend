@@ -1,0 +1,68 @@
+<div>
+    <div class="profile row">
+        <div *ngIf="isEdit" class="col-md-7">
+            
+            <div class="form-group">
+                <label for="name">User name:</label>
+                <input id="name" class="form-control" type="text" name="">
+            </div>
+
+            <div class="form-group">
+                <label for="email">User email:</label>
+                <input id="email" class="form-control" type="email" name="">
+            </div>
+
+            <div class="form-group">
+                <label for="money">Money:</label>
+                <input id="money" class="form-control" type="number" min="0" step="0.01" name="">
+            </div>
+        </div>
+        <div *ngIf="!isEdit" class="col-md-7">
+            
+            <div>
+                <div>
+                    <label for="name">User name:</label>
+                </div>
+                <div>
+                    <label>{{user.name}}</label>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <label for="name">User email:</label>
+                </div>
+                <div>
+                    <label>{{user.email}}</label>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <label for="name">Money:</label>
+                </div>
+                <div>
+                    <label>{{user.money}}</label>
+                </div>
+            </div>
+
+
+
+
+        </div>
+        <div class="col-md-4">
+
+        </div>
+    </div>
+    
+
+
+    <div class="nav nav-tabs">
+        <div class="nav-item">
+            <app-sturtup-table></app-sturtup-table>
+        </div>
+        <div class="nav-item">
+            <app-sturtup-table></app-sturtup-table>
+        </div>
+    </div>
+
+
+</div>
