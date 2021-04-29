@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/models/News';
+import { StartupService } from 'src/app/api/startup.service';
+import { UserService } from 'src/app/api/user.service';
+import { Startup } from 'src/app/models/Startup';
+import { User } from 'src/app/models/User';
 
 @Component({
   selector: 'app-user-account',
@@ -8,23 +11,20 @@ import { User } from 'src/app/models/News';
 })
 export class UserAccountComponent implements OnInit {
 
-  constructor() { 
-    let curentUserId = 6;
-    let isCurentUserAdmin = false;
+  startupsCreatedByUser: Startup[];
+  user: User;
+  isEdit: boolean;
 
-    this.user ={
-      email: "qweqw@gmail.com",
-      id: 5,
-      isAdmin: isCurentUserAdmin,
-      money: 555,
-      name: "Foo"
-    }
+  constructor(
+    private readonly startupService: StartupService,
+    private readonly userService: UserService
+  ) { 
+    let curentUserId = 4;
+    this.user = this.userService.GetUserById(6);
+    this.startupsCreatedByUser = this.startupService.GetSturtupsCreatedByUser(this.user.id);
 
     this.isEdit = this.user.isAdmin || this.user.id == curentUserId;
   }
-
-  user: User;
-  isEdit: boolean;
 
   ngOnInit(): void {
   }

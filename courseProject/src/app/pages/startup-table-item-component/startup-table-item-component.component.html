@@ -1,0 +1,25 @@
+<div class="startup-table-item">
+    <div class="row">
+        <div class="col-md-2 startup-table-item-subitem2">
+            <div>{{startup.author.name}} presents:</div>
+        </div>
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-7 startup-table-item-subitem2">
+            <label>{{startup.header}}</label>
+        </div>
+    </div>
+    <div class="row startup-table-item-subitem">
+        {{startup.content}}
+    </div>
+    <div class="tags-container">
+        <div *ngFor="let tag of startup.tegs">
+            <div class="tag-item startup-table-item-subitem">
+                <div>
+                    <label>{{tag}}</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

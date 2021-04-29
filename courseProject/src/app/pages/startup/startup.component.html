@@ -1,1 +1,26 @@
 <p>startup works!</p>
+<div>
+    <div>
+        <label for="name">Author name:</label>
+        <div class="col-md-7">
+            <input id="name" class="form-control" type="text" value="{{startup.author.name}}" disabled>
+        </div>
+
+        <label for="name">Sturtup name:</label>
+        <div *ngIf="isEdit" class="col-md-7">
+            <input id="name" class="form-control" type="text" value="{{startup.header}}">
+        </div>
+        <div *ngIf="!isEdit" class="col-md-7">
+            <input id="name" class="form-control" type="text" value="{{startup.header}}" disabled>
+        </div>
+
+
+        <label></label>
+        <div *ngIf="isEdit">
+
+        </div>
+        <div *ngIf="!isEdit">
+            
+        </div>
+    </div>
+</div>

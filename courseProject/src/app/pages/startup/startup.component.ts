@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { StartupService } from 'src/app/api/startup.service';
+import { Startup } from 'src/app/models/Startup';
 
 @Component({
   selector: 'app-startup',
@@ -7,7 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartupComponent implements OnInit {
 
-  constructor() { }
+  @Input() startupId: number | null;
+  startup: Startup;
+  isEdit: Boolean;
+  constructor(
+    private readonly startupService: StartupService,
+  ) {
+    this.isEdit = true;
+    this.startup = this.startupId == null 
+      ? new Startup()
+      : startupService.GetStartupById(this.startupId);
+   }
 
   ngOnInit(): void {
   }

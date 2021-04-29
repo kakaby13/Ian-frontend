@@ -1,0 +1,20 @@
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tag-item {
+    margin: 5px;
+}
+
+.startup-table-item {
+    background-color: WhiteSmoke;
+}
+
+.startup-table-item-subitem {
+    background-color: Gainsboro;
+}
+
+.startup-table-item-subitem2 {
+    background-color: Silver;
+}
