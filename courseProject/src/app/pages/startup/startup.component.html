@@ -1,26 +1,45 @@
-<p>startup works!</p>
-<div>
-    <div>
-        <label for="name">Author name:</label>
-        <div class="col-md-7">
+<div class="row">
+   <div class="col-md-8">
+      <div class="form-group">
+         <label for="name">Author name:</label>
+         <div>
             <input id="name" class="form-control" type="text" value="{{startup.author.name}}" disabled>
-        </div>
-
-        <label for="name">Sturtup name:</label>
-        <div *ngIf="isEdit" class="col-md-7">
-            <input id="name" class="form-control" type="text" value="{{startup.header}}">
-        </div>
-        <div *ngIf="!isEdit" class="col-md-7">
-            <input id="name" class="form-control" type="text" value="{{startup.header}}" disabled>
-        </div>
-
-
-        <label></label>
-        <div *ngIf="isEdit">
-
-        </div>
-        <div *ngIf="!isEdit">
-            
-        </div>
-    </div>
+         </div>
+      </div>
+      <div class="form-group">
+         <label for="header">Sturtup name:</label>
+         <div *ngIf="isEdit">
+            <input id="header" class="form-control" type="text" value="{{startup.header}}">
+         </div>
+         <div *ngIf="!isEdit">
+            <input id="header" class="form-control" type="text" value="{{startup.header}}" disabled>
+         </div>
+      </div>
+      <div class="form-group">
+         <label for="content">Short description:</label>
+         <div *ngIf="isEdit">
+            <input id="content" class="form-control" type="textarea" value="{{startup.content}}">
+         </div>
+         <div *ngIf="!isEdit">
+            <input id="content" class="form-control" type="textarea" value="{{startup.content}}" disabled>
+         </div>
+      </div>
+      <div class="form-group">
+         <label for="moneyNeeded">Money need:</label>
+         <div *ngIf="isEdit" >
+            <input id="moneyNeeded" class="form-control" type="number" min="0" step="0.01" value="{{startup.moneyNeeded}}">
+         </div>
+         <div *ngIf="!isEdit">
+            <input id="moneyNeeded" class="form-control" type="number" min="0" step="0.01" value="{{startup.moneyNeeded}}" disabled>
+         </div>
+      </div>
+      <div class="form-group">
+         <label for="moneyCollected">Money:</label>
+         <input id="moneyCollected" class="form-control" type="number" min="0" step="0.01" value="{{startup.moneyColected}}" disabled>
+      </div>
+   </div>
+   <div class="col-md-4">
+       <app-achievements-list [achievementsList]="achievementsList" [chosedAchievementsList]="chosedAchievementsList">
+       </app-achievements-list>
+   </div>
 </div>

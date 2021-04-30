@@ -1,0 +1,14 @@
+
+<div class="dropdown" id="dropdown">
+    <input type="text">
+    <div class="options">
+        <fieldset></fieldset>
+
+        <fieldset *ngFor="let achievementItem of achievementsList">
+            <label href="javascript:void(0)" attr.data-value="{{achievementItem.name}}">
+                <input type="checkbox" required>
+            </label>
+        </fieldset>
+    </div>
+</div>
+

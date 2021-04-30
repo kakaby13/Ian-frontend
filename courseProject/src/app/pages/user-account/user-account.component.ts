@@ -14,6 +14,7 @@ export class UserAccountComponent implements OnInit {
   startupsCreatedByUser: Startup[];
   user: User;
   isEdit: boolean;
+   
 
   constructor(
     private readonly startupService: StartupService,
