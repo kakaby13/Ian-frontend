@@ -1,1 +1,34 @@
-<p>singin works!</p>
+<div>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 input-item-margin">
+            <label class="margin-left">Username</label>
+            <input #usernameInput id="login" class="form-control" type="text" (input)="username = usernameInput.value">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 input-item-margin">
+            <label class="margin-left">Email</label>
+            <input #emailInput  id="email" class="form-control" type="email" (input)="email = emailInput.value">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 input-item-margin">
+            <label class="margin-left">Password</label>
+            <input #passwordInput id="password" class="form-control" type="password" (input)="password = passwordInput.value">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-7">
+
+        </div>
+        <div class="col-md-2 input-item-margin">
+            <button class="btn btn-success" type="submit" (click)="signin()">Sign in</button>
+        </div>    
+    </div>
+</div>

@@ -1,21 +1,37 @@
 <div>
     <div class="row">
-        <div class="col-md-4"></div>
+        <div class="col-md-2">
+        </div>
         <div class="col-md-2">
             <label>Tags:</label>
         </div>
-        
-
     </div>
-    <div class="tag-container">
-        <div>
+
+
+    <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-2">
             <label>Add new:</label>
-            <input id="header" class="form-control" type="text">
+            <div class="row">
+                <div class="col-md-8">
+                    <input id="header" class="form-control" type="text">
+                </div>
+                <div class="col-md-4">
+                    <button class="btn btn-success" type="submit">Add</button>
+                </div>
+            </div>
         </div>
-
-        <div *ngFor="let tag of tags" class="tag-item">
-            <label>{{tag.text}}</label>
-        </div>
-
     </div>
+
+    <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="tag-container col-md-6">
+            <div *ngFor="let tag of tags" class="tag-item">
+                <label>{{tag.text}}</label>
+            </div>
+        </div>
+    </div>
+   
 </div>

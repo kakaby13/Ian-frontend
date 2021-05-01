@@ -28,7 +28,7 @@ export class StartupComponent implements OnInit {
     private readonly achievementService: AchievementService,
     private activateRoute: ActivatedRoute
   ) {
-      let userId = 1;
+      let userId = 7;
 
       this.subscription = this.activateRoute.params.subscribe(params=>this.id=params['id']);
 

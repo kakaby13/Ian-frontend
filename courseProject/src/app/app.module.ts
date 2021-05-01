@@ -23,6 +23,7 @@ import { CurentUserProvider } from './services/CurentUserProvider';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { SinginComponent } from './pages/singin/singin.component';
+import { AuthService } from './api/auth.service';
 
 const appRoutes: Routes =[
   {path: '', component: NewsTableComponent},
@@ -56,6 +57,7 @@ const appRoutes: Routes =[
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
+    AuthService,
     CurentUserProvider,
     NewsService,
     UrlProvider,
