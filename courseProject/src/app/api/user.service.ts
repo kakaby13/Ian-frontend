@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
-import { Startup } from "../models/Startup";
 import { User } from "../models/User";
 import { Helper } from "./foo";
 
@@ -11,7 +10,7 @@ export class UserService {
     ) {
     }
 
-    public GetUserById(id: Number): User {
+    public GetUserById(id: number): User {
         return Helper.GetUserById(id);
     }
 

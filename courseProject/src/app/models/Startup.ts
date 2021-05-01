@@ -1,4 +1,5 @@
 import { Achievement } from "./Achievement";
+import { Tag } from "./Tag";
 import { User } from "./User";
 
 export class Startup {
@@ -7,7 +8,7 @@ export class Startup {
     content: string;
     author: User;
     achievements: Array<Achievement>;
-    tegs: Array<string>;
+    tags: Array<Tag>;
     moneyNeeded: number;
     moneyColected: number;
     

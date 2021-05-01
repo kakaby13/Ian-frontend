@@ -16,6 +16,8 @@ import { StartupTableComponentComponent } from './pages/startup-table-component/
 import { StartupTableItemComponentComponent } from './pages/startup-table-item-component/startup-table-item-component.component';
 import { StartupComponent } from './pages/startup/startup.component';
 import { AchievementsListComponent } from './pages/achievements-list/achievements-list.component';
+import { TagListComponent } from './pages/tag-list/tag-list.component';
+import { TagService } from './api/tag.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { AchievementsListComponent } from './pages/achievements-list/achievement
      StartupTableComponentComponent,
      StartupTableItemComponentComponent,
      StartupComponent,
-     AchievementsListComponent
+     AchievementsListComponent,
+     TagListComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +40,7 @@ import { AchievementsListComponent } from './pages/achievements-list/achievement
   providers: [
     NewsService,
     UrlProvider,
+    TagService,
     AchievementService,
     StartupService,
     UserService

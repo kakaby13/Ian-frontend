@@ -12,25 +12,20 @@ export class StartupService {
     }
 
     public GetAllStartups(): Startup[] {
-        return this.GetRandomListOfSturtups();
-    }
-
-    public GetStartupById(id: number): Startup {
-        return this.GetRandomListOfSturtups()[0];
-    }
-
-    public GetSturtupsCreatedByUser(id: Number): Startup[] {
-        return this.GetRandomListOfSturtups();
-    }
-
-    public GetSturtupsFinancedByUser(id: number): Startup[] {
-        return this.GetRandomListOfSturtups();
-    }
-
-    public GetRandomListOfSturtups(): Startup[] {
         return Helper.GetRandomListOfSturtups();
     }
 
+    public GetStartupById(id: number): Startup {
+        return Helper.GetRandomListOfSturtups()[0];
+    }
+
+    public GetSturtupsCreatedByUser(id: Number): Startup[] {
+        return Helper.GetRandomListOfSturtups();
+    }
+
+    public GetSturtupsFinancedByUser(id: number): Startup[] {
+        return Helper.GetRandomListOfSturtups();
+    }
 
     public DonateToSturtup(currentUser: User, startupToDonate: Startup, moneyAmount: Number) {
         
