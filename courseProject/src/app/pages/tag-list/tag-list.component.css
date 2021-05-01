@@ -1,0 +1,11 @@
+.tag-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.tag-item {
+    margin: 5px;
+    background-color: silver;
+}

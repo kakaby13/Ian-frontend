@@ -4,6 +4,7 @@ import { StartupService } from 'src/app/api/startup.service';
 import { UserService } from 'src/app/api/user.service';
 import { Achievement } from 'src/app/models/Achievement';
 import { Startup } from 'src/app/models/Startup';
+import { Tag } from 'src/app/models/Tag';
 
 @Component({
   selector: 'app-startup',

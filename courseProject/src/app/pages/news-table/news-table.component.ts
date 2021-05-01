@@ -16,7 +16,7 @@ export class NewsTableComponent implements OnInit {
   constructor(
     private readonly newsService: NewsService,
   ) {
-    this.newsArray = newsService.GetNews();
+    this.newsArray = this.newsService.GetNews();
    }
 
   ngOnInit(): void {
