@@ -2,8 +2,7 @@
     background-color: gray;
 }
 
-.logo {
-    height: 50px;
-    width: 50px;
-    background-color: red;
-}
+
+img {
+    border-radius: 8px;
+  }

@@ -7,7 +7,9 @@
 
         </div>
         <div class="col-md-7 startup-table-item-subitem2">
-            <label>{{startup.header}}</label>
+            <a [routerLink]="['/startup', '{{startup.id}}']">
+                <label>{{startup.header}}</label>
+            </a>
         </div>
     </div>
     <div class="row startup-table-item-subitem">

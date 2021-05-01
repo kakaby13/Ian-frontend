@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { AchievementService } from 'src/app/api/achievement.service';
 import { StartupService } from 'src/app/api/startup.service';
 import { UserService } from 'src/app/api/user.service';
@@ -13,26 +15,27 @@ import { Tag } from 'src/app/models/Tag';
 })
 export class StartupComponent implements OnInit {
 
-  @Input() startupId: number | null;
-
   startup: Startup;
   isEdit: boolean;
   achievementsList: Achievement[];
+      id: number;
   chosedAchievementsList: Achievement[];
+  private subscription: Subscription;
 
   constructor(
     private readonly startupService: StartupService,
     private readonly userService: UserService,
     private readonly achievementService: AchievementService,
+    private activateRoute: ActivatedRoute
   ) {
-      this.startupId = 7;
       let userId = 1;
 
+      this.subscription = this.activateRoute.params.subscribe(params=>this.id=params['id']);
 
       let currentUser = this.userService.GetUserById(userId);
-      this.startup = this.startupId == null 
+      this.startup = this.id == null 
         ? new Startup()
-        : this.startupService.GetStartupById(this.startupId);
+        : this.startupService.GetStartupById(this.id);
 
       this.isEdit = currentUser.id == this.startup.author.id || currentUser.isAdmin;
 

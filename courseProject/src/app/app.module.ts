@@ -20,6 +20,18 @@ import { TagListComponent } from './pages/tag-list/tag-list.component';
 import { TagService } from './api/tag.service';
 import { MainMenuAccountComponent } from './pages/main-menu-account/main-menu-account.component';
 import { CurentUserProvider } from './services/CurentUserProvider';
+import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './pages/login/login.component';
+import { SinginComponent } from './pages/singin/singin.component';
+
+const appRoutes: Routes =[
+  {path: '', component: NewsTableComponent},
+  {path: 'account', component: UserAccountComponent},
+  {path: 'Login', component: LoginComponent},
+  {path: 'Signin', component: SinginComponent},
+  {path: 'startup/:id', component: StartupComponent},
+
+]
 
 @NgModule({
   declarations: [
@@ -34,11 +46,14 @@ import { CurentUserProvider } from './services/CurentUserProvider';
      StartupComponent,
      AchievementsListComponent,
      TagListComponent,
-     MainMenuAccountComponent
+     MainMenuAccountComponent,
+     LoginComponent,
+     SinginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     CurentUserProvider,

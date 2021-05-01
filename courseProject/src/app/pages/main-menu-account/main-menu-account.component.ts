@@ -13,6 +13,7 @@ export class MainMenuAccountComponent implements OnInit {
   user: User;
   isUserLoged: boolean;
 
+  
   constructor(
     private readonly curentUserProvider: CurentUserProvider,
   ) {
@@ -20,6 +21,7 @@ export class MainMenuAccountComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    
   }
 
 }
