@@ -1,0 +1,8 @@
+.foo {
+    background-color: aqua;
+}
+
+.account-buttons-block {
+    display: flex;
+    justify-content: flex-end;
+}

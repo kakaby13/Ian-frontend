@@ -1,0 +1,19 @@
+<div class="foo">
+    <div *ngIf="isUserLoged" class="account-buttons-block">
+        <div>
+            <button class="btn btn-success" type="submit">Sign in</button>
+        </div>
+        <div>
+            <button class="btn btn-success" type="submit">Log in</button>
+        </div>
+    </div>
+
+    <div *ngIf="!isUserLoged" class="account-buttons-block">
+        <div>
+            <button class="btn btn-success" type="submit">Profile</button>
+        </div>
+        <div >
+            <button class="btn btn-success" type="submit">Log out</button>
+        </div>
+    </div>
+</div>

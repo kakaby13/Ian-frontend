@@ -18,6 +18,8 @@ import { StartupComponent } from './pages/startup/startup.component';
 import { AchievementsListComponent } from './pages/achievements-list/achievements-list.component';
 import { TagListComponent } from './pages/tag-list/tag-list.component';
 import { TagService } from './api/tag.service';
+import { MainMenuAccountComponent } from './pages/main-menu-account/main-menu-account.component';
+import { CurentUserProvider } from './services/CurentUserProvider';
 
 @NgModule({
   declarations: [
@@ -31,13 +33,15 @@ import { TagService } from './api/tag.service';
      StartupTableItemComponentComponent,
      StartupComponent,
      AchievementsListComponent,
-     TagListComponent
+     TagListComponent,
+     MainMenuAccountComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
   ],
   providers: [
+    CurentUserProvider,
     NewsService,
     UrlProvider,
     TagService,

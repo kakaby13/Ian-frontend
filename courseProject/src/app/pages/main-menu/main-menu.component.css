@@ -1,4 +1,9 @@
 .menu {
-    min-height: 50px;
     background-color: gray;
+}
+
+.logo {
+    height: 50px;
+    width: 50px;
+    background-color: red;
 }
