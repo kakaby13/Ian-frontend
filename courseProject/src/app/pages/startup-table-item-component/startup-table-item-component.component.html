@@ -7,7 +7,7 @@
 
         </div>
         <div class="col-md-7 startup-table-item-subitem2">
-            <a [routerLink]="['/startup', '{{startup.id}}']">
+            <a (click)="goToStartup()">
                 <label>{{startup.header}}</label>
             </a>
         </div>

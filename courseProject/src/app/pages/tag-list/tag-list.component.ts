@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { TagService } from 'src/app/api/tag.service';
 import { Tag } from 'src/app/models/Tag';
 
 @Component({
@@ -10,10 +11,26 @@ export class TagListComponent implements OnInit {
 
   @Input()
   tags: Tag[];
+
+  @Input()
+  startupId: number;
   
-  constructor() { }
+  public newTag = "";
+
+  constructor(
+    private readonly tagService: TagService,
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  public addTag() {
+    this.tagService.SaveTagIfNotExist(this.newTag, this.startupId);
+    let freshTag: Tag = new Tag();
+    freshTag.text = this.newTag;
+    this.tags.push(freshTag);
+
+    this.newTag = "";
   }
 
 }

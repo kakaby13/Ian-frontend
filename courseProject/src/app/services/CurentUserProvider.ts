@@ -9,11 +9,11 @@ export class CurentUserProvider {
 
     public GetCurrentUser(): User {
 
-        return Helper.GetUserById(2);
+        return Helper.GetUserById(1);
     }
 
     public IsUserLogedIn(): boolean {
-        return false;
+        return true;
     }
 
     public SaveCurrentUser(user: User) {

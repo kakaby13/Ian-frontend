@@ -22,7 +22,7 @@ export class Helper {
     static GetNews(): News[] {
         let foo: News = 
         {
-          id: 13,
+          startupId: 13,
           author: 'Автор',
           content: 'Контент новости',
           header: 'Заголовок'

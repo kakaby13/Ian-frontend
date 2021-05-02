@@ -11,7 +11,6 @@ import { NewsItemComponent } from 'src/app/pages/news-item/news-item.component';
 export class NewsTableComponent implements OnInit {
 
   newsArray: News[];
-  newsComponent: NewsItemComponent = new NewsItemComponent();
 
   constructor(
     private readonly newsService: NewsService,

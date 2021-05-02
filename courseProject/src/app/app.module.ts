@@ -20,13 +20,15 @@ import { TagListComponent } from './pages/tag-list/tag-list.component';
 import { TagService } from './api/tag.service';
 import { MainMenuAccountComponent } from './pages/main-menu-account/main-menu-account.component';
 import { CurentUserProvider } from './services/CurentUserProvider';
-import { RouterModule, Routes } from '@angular/router';
+import { Router, RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { SinginComponent } from './pages/singin/singin.component';
 import { AuthService } from './api/auth.service';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes =[
   {path: '', component: NewsTableComponent},
+  {path: 'account/:userId', component: UserAccountComponent},
   {path: 'account', component: UserAccountComponent},
   {path: 'Login', component: LoginComponent},
   {path: 'Signin', component: SinginComponent},
@@ -49,9 +51,10 @@ const appRoutes: Routes =[
      TagListComponent,
      MainMenuAccountComponent,
      LoginComponent,
-     SinginComponent
+     SinginComponent,
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes)

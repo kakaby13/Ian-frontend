@@ -7,7 +7,7 @@ export class TagService {
         return [];
     }
 
-    public SaveTagIfNotExist(tag: string) {
+    public SaveTagIfNotExist(tag: string, startupId: number) {
         
     }
 }

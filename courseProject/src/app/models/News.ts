@@ -1,5 +1,5 @@
 export class News {
-    id: Number;
+    startupId: Number;
     header: string;
     author: string;
     content: string;    

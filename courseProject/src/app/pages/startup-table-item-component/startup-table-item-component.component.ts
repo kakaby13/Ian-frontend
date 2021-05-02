@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Startup } from 'src/app/models/Startup';
 
 @Component({
@@ -11,9 +12,14 @@ export class StartupTableItemComponentComponent implements OnInit {
   @Input() startup: Startup;
 
 
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
   }
 
+  goToStartup() {
+    this.router.navigate(['/startup', this.startup.id])
+  }
 }

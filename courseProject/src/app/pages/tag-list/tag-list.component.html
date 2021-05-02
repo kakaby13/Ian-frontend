@@ -7,7 +7,6 @@
         </div>
     </div>
 
-
     <div class="row">
         <div class="col-md-1">
         </div>
@@ -15,10 +14,10 @@
             <label>Add new:</label>
             <div class="row">
                 <div class="col-md-8">
-                    <input id="header" class="form-control" type="text">
+                    <input type="text" id="header" class="form-control" [(ngModel)]="newTag"/>
                 </div>
                 <div class="col-md-4">
-                    <button class="btn btn-success" type="submit">Add</button>
+                    <button class="btn btn-success" type="submit" (click)="addTag()">Add</button>
                 </div>
             </div>
         </div>
@@ -33,5 +32,4 @@
             </div>
         </div>
     </div>
-   
 </div>
