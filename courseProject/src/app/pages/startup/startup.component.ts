@@ -44,4 +44,8 @@ export class StartupComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  saveChanges() {
+    
+  }
 }
