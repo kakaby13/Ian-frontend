@@ -31,5 +31,7 @@ export class StartupService {
         
     }
 
-    
+    public GetStartupsByTag(tag: string) :Startup[] {
+        return Helper.GetRandomListOfSturtups();
+    }
 }

@@ -20,13 +20,14 @@ import { TagListComponent } from './pages/tag-list/tag-list.component';
 import { TagService } from './api/tag.service';
 import { MainMenuAccountComponent } from './pages/main-menu-account/main-menu-account.component';
 import { CurentUserProvider } from './services/CurentUserProvider';
-import { Router, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { SinginComponent } from './pages/singin/singin.component';
 import { AuthService } from './api/auth.service';
 import { FormsModule } from '@angular/forms';
 import { RewardsComponent } from './pages/rewards/rewards.component';
 import { RewardService } from './api/reward.service';
+import { TagSearchComponent } from './pages/tag-search/tag-search.component';
 
 const appRoutes: Routes =[
   {path: '', component: NewsTableComponent},
@@ -35,6 +36,7 @@ const appRoutes: Routes =[
   {path: 'Login', component: LoginComponent},
   {path: 'Signin', component: SinginComponent},
   {path: 'startup/:id', component: StartupComponent},
+  {path: 'tagsearch/:tag', component: TagSearchComponent},
 
 ]
 
@@ -46,15 +48,16 @@ const appRoutes: Routes =[
     UserAccountComponent,
     NewsItemComponent,
     AchievementsComponent,
-     StartupTableComponentComponent,
-     StartupTableItemComponentComponent,
-     StartupComponent,
-     AchievementsListComponent,
-     TagListComponent,
-     MainMenuAccountComponent,
-     LoginComponent,
-     SinginComponent,
-     RewardsComponent,
+    StartupTableComponentComponent,
+    StartupTableItemComponentComponent,
+    StartupComponent,
+    AchievementsListComponent,
+    TagListComponent,
+    MainMenuAccountComponent,
+    LoginComponent,
+    SinginComponent,
+    RewardsComponent,
+    TagSearchComponent,
   ],
   imports: [
     FormsModule,
