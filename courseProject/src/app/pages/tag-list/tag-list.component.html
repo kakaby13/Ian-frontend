@@ -29,7 +29,7 @@
         <div class="col-md-8">
             <div class="tag-container col-md-6">
                 <div *ngFor="let tag of tags" class="tag-item">
-                    <label>{{tag.text}}</label>
+                    <label (click)="goToSearchByTag(tag.text)">{{tag.text}}</label>
                     <button class="btn btn-success" type="submit" (click)="deleteTag(tag.text)">Remove</button>
                 </div>
             </div>
