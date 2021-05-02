@@ -39,4 +39,9 @@ export class TagListComponent implements OnInit {
   goToSearchByTag(tag: string) {
     this.router.navigate(['/tagsearch', tag])
   }
+
+  deleteTag(tag: string) {
+    this.tagService.DeleteTag(tag);
+    this.tags = this.tags.filter(c => c.text !== tag);
+  }
 }

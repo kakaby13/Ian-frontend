@@ -10,4 +10,8 @@ export class TagService {
     public SaveTagIfNotExist(tag: string, startupId: number) {
         
     }
+
+    public DeleteTag(tag: string) {
+
+    }
 }
