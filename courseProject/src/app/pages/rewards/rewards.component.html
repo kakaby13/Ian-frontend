@@ -1,0 +1,58 @@
+<div style="background-color: blueviolet;">
+    <div class="row">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-6">
+            <label>Rewards:</label>
+        </div>
+    </div>
+
+    <div *ngIf="isEdit">
+        <div class="row">
+            <div class="col-md-5">
+                <input type="text" id="header" class="form-control" [(ngModel)]="newRewardText"/>
+            </div>
+            <div class="col-md-3">
+                <input type="number" id="header" class="form-control" [(ngModel)]="newRewardMoney"/>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-success" type="submit" (click)="addReward()">Add</button>
+            </div>
+        </div>
+
+        <div class="row" *ngFor="let reward of startup.rewards">
+            <div class="col-md-5">
+                <label>{{reward.text}}</label>
+            </div>
+            <div class="col-md-5">
+                <label>{{reward.money}}</label>
+            </div>
+            <div class="col-md-1">
+                <button class="btn btn-success" type="submit" (click)="removeRewardById(reward.id)">Remove</button>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="!isEdit">
+        <div class="row" *ngFor="let reward of startup.rewards">
+            <div class="col-md-7">
+                <label>{{reward.text}}</label>
+            </div>
+            <div class="col-md-3">
+                <label>{{reward.money}}</label>
+            </div>
+            <div class="col-md-1">
+                <button class="btn btn-success" type="submit" (click)="unlockReward(reward.id)">Unlock</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+</div>

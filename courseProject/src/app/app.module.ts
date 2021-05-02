@@ -25,6 +25,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { SinginComponent } from './pages/singin/singin.component';
 import { AuthService } from './api/auth.service';
 import { FormsModule } from '@angular/forms';
+import { RewardsComponent } from './pages/rewards/rewards.component';
+import { RewardService } from './api/reward.service';
 
 const appRoutes: Routes =[
   {path: '', component: NewsTableComponent},
@@ -52,6 +54,7 @@ const appRoutes: Routes =[
      MainMenuAccountComponent,
      LoginComponent,
      SinginComponent,
+     RewardsComponent,
   ],
   imports: [
     FormsModule,
@@ -60,6 +63,7 @@ const appRoutes: Routes =[
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
+    RewardService,
     AuthService,
     CurentUserProvider,
     NewsService,
