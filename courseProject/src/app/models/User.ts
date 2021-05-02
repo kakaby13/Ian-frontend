@@ -2,6 +2,6 @@ export class User {
     id: number;
     name: string;
     email: string;
-    money: Number;
+    money: number;
     isAdmin: boolean;
 }

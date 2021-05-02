@@ -22,18 +22,28 @@
     
             <div class="form-group">
                 <label for="money">Money:</label>
-                <div *ngIf="isEdit" class="col-md-7">
-                    <input id="money" class="form-control" type="number" min="0" step="0.01" value="{{user.money}}">
-                </div>
-                <div *ngIf="!isEdit" class="col-md-7">
-                    <input id="money" class="form-control" type="number" min="0" step="0.01" value="{{user.money}}" disabled>
+                <div class="row">
+                    <div class="col-md-2">
+                        <label>Currently:</label>
+                    </div>
+                    <div class="col-md-1">
+                        <label>{{user.money}}</label>
+                    </div>
+                    <div class="col-md-1">
+                        <label>money</label>
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-3" *ngIf="isEdit">
+                        <button class="btn btn-success" type="submit" (click)="addMoneyToBalance()">Add 1000 money</button>
+                    </div>
                 </div>
             </div>
             <div *ngIf="isEdit" class="row">
                 <div class="col-md-6">
                 </div>
                 <div class="col-md-4">
-                    <button class="btn btn-success" type="submit">Save</button>
+                    <button class="btn btn-success" type="submit">Save shanges</button>
                 </div>
             </div>
 

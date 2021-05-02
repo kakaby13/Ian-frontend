@@ -51,4 +51,9 @@ export class UserAccountComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public addMoneyToBalance() {
+    let currentUser = this.currentUserProvider.GetCurrentUser();
+    currentUser.money += 1000;
+    this.userService.SaveUserInfo(currentUser);
+  }
 }
