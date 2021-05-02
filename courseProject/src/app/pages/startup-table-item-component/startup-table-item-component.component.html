@@ -18,9 +18,9 @@
     <div class="tags-container">
         <div *ngFor="let tag of startup.tags">
             <div class="tag-item startup-table-item-subitem">
-                <div>
+                <a (click)="goToSearchByTag(tag.text)">
                     <label>{{tag.text}}</label>
-                </div>
+                </a>
             </div>
         </div>
     </div>

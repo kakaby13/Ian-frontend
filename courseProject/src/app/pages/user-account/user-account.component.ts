@@ -56,4 +56,8 @@ export class UserAccountComponent implements OnInit {
     currentUser.money += 1000;
     this.userService.SaveUserInfo(currentUser);
   }
+
+  public saveChanges() {
+    this.userService.SaveUserInfo(this.user);
+  }
 }

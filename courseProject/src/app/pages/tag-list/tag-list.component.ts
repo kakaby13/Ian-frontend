@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TagService } from 'src/app/api/tag.service';
 import { Tag } from 'src/app/models/Tag';
 
@@ -19,6 +20,7 @@ export class TagListComponent implements OnInit {
 
   constructor(
     private readonly tagService: TagService,
+    private readonly router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -33,4 +35,8 @@ export class TagListComponent implements OnInit {
     this.newTag = "";
   }
 
+
+  goToSearchByTag(tag: string) {
+    this.router.navigate(['/tagsearch', tag])
+  }
 }

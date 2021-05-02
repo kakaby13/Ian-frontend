@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AchievementService } from 'src/app/api/achievement.service';
 import { StartupService } from 'src/app/api/startup.service';
@@ -44,5 +44,4 @@ export class StartupComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

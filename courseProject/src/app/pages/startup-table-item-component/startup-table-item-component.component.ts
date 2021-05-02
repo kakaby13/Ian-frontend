@@ -22,4 +22,8 @@ export class StartupTableItemComponentComponent implements OnInit {
   goToStartup() {
     this.router.navigate(['/startup', this.startup.id])
   }
+
+  goToSearchByTag(tag: string) {
+    this.router.navigate(['/tagsearch', tag])
+  }
 }
