@@ -1,3 +1,33 @@
 .common-background {
-    background-color: rgb(236, 236, 236);
+    background-color: WhiteSmoke;
+}
+
+.item-tier-1 {
+    background-color: Gainsboro;
+}
+
+
+.item-tier-2 {
+    background-color: LightGray;
+
+}
+
+
+.item-tier-3 {
+    background-color: Silver;
+
+}
+
+
+.item-tier-4 {
+    background-color: DarkGray;
+}
+
+
+.item-tier-5 {
+    background-color: Gray;
+}
+
+.link-header {
+    background-color: orangered;
 }
