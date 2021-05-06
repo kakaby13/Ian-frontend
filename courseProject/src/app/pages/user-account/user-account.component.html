@@ -40,10 +40,14 @@
                 </div>
             </div>
             <div *ngIf="isEdit" class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                 </div>
                 <div class="col-md-4">
-                    <button class="btn btn-success" type="submit">Save shanges</button>
+                    <button class="btn btn-success" type="submit" (click)="saveChanges()">Save shanges</button>
+                </div>
+
+                <div class="col-md-4">
+                    <button class="btn btn-success" type="submit" (click)="createStartup()">Create startup</button>
                 </div>
             </div>
 
@@ -58,7 +62,11 @@
     </div>
     
     <div *ngIf="isOwner">
-sdfsdfsd
+
+        !!!!!!!!!!!!!!!!!
+        тут надо добавить карусель
+        !!!!!!!!!!!!!!!!!
+
     </div>
 
     <div name="userStartup">
@@ -66,7 +74,7 @@ sdfsdfsd
     </div>
 
     <div name="userDonatedStartup">
-
+        <app-startup-table-component [startupArray]=sturtupsFinancedByUser></app-startup-table-component>
     </div>
 
 </div>

@@ -13,6 +13,4 @@ export class Startup {
     moneyNeeded: number;
     moneyColected: number;
     rewards: Reward[];
-    
-
 }

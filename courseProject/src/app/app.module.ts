@@ -36,6 +36,7 @@ const appRoutes: Routes =[
   {path: 'Login', component: LoginComponent},
   {path: 'Signin', component: SinginComponent},
   {path: 'startup/:id', component: StartupComponent},
+  {path: 'create-startup', component: StartupComponent},
   {path: 'tagsearch/:tag', component: TagSearchComponent},
 
 ]

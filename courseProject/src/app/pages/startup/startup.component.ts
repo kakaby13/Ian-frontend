@@ -20,6 +20,7 @@ export class StartupComponent implements OnInit {
   achievementsList: Achievement[];
   chosedAchievementsList: Achievement[];
   subscription: Subscription;
+  isStartupExist: boolean;
 
   constructor(
     private readonly startupService: StartupService,
@@ -29,11 +30,13 @@ export class StartupComponent implements OnInit {
   ) {
       this.subscription = this.activateRoute.params.subscribe(params=>this.id=params['id']);
 
-      let currentUser = this.curentUserProvider.GetCurrentUser();;
+      let currentUser = this.curentUserProvider.GetCurrentUser();
 
       this.startup = this.id == null 
-        ? new Startup()
+        ? this.getNewStartup()
         : this.startupService.GetStartupById(this.id);
+
+      this.isStartupExist = this.startup.id != 0;
 
       this.isEdit = currentUser.id == this.startup?.author?.id || currentUser.isAdmin;
 
@@ -47,5 +50,13 @@ export class StartupComponent implements OnInit {
 
   saveChanges() {
     this.startupService.Save(this.startup);
+  }
+
+  private getNewStartup() : Startup {
+    let startup = new Startup();
+    startup.id = 0;
+    startup.author = this.curentUserProvider.GetCurrentUser();
+
+    return startup;
   }
 }

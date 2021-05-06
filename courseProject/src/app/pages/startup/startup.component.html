@@ -44,10 +44,10 @@
          </div>
       </div>
    </div>
-   <div class="col-md-4">
+   <div *ngIf="isStartupExist" class="col-md-4">
       <app-rewards [startup]="startup" [isEdit]="isEdit"></app-rewards>
    </div>
 </div>
-<div>
+<div *ngIf="isStartupExist">
    <app-tag-list [tags]="startup.tags" [startupId]="startup.id"></app-tag-list>
 </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AchievementService } from 'src/app/api/achievement.service';
 import { StartupService } from 'src/app/api/startup.service';
@@ -19,6 +19,7 @@ export class UserAccountComponent implements OnInit {
   userId: number;
 
   startupsCreatedByUser: Startup[];
+  sturtupsFinancedByUser: Startup[];
   user: User;
   isEdit: boolean;
   isOwner: boolean;
@@ -31,6 +32,7 @@ export class UserAccountComponent implements OnInit {
     private readonly achivementService: AchievementService,
     private readonly currentUserProvider: CurentUserProvider,
     private activateRoute: ActivatedRoute,
+    private readonly router: Router,
 
   ) { 
     this.subscription = this.activateRoute.params.subscribe(params=>this.userId=params['userId']);
@@ -43,6 +45,7 @@ export class UserAccountComponent implements OnInit {
       this.user = this.userService.GetUserById(this.userId);
     }
     this.startupsCreatedByUser = this.startupService.GetSturtupsCreatedByUser(this.user.id);
+    this.sturtupsFinancedByUser = this.startupService.GetSturtupsFinancedByUser(this.user.id);
     this.userAchivements = this.achivementService.GetAchivementsByUserId(this.user.id);
     this.isEdit = this.user.isAdmin || this.user.id == curentUser.id;
     this.isOwner = this.user.id == curentUser.id;
@@ -59,5 +62,9 @@ export class UserAccountComponent implements OnInit {
 
   public saveChanges() {
     this.userService.SaveUserInfo(this.user);
+  }
+
+  public createStartup() {
+    this.router.navigate(['/create-startup'])
   }
 }
