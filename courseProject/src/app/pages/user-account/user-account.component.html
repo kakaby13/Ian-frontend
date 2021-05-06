@@ -4,19 +4,19 @@
             <div class="form-group">
                 <label for="name">User name:</label>
                 <div *ngIf="isEdit" class="col-md-7">
-                    <input id="name" class="form-control" type="text" value="{{user.name}}">
+                    <input id="name" class="form-control" type="text" [(ngModel)]="user.name">
                 </div>
                 <div *ngIf="!isEdit" class="col-md-7">
-                    <input id="name" class="form-control" type="text" value="{{user.name}}" disabled>
+                    <input id="name" class="form-control" type="text" [(ngModel)]="user.name" disabled>
                 </div>
             </div>
             <div class="form-group">
                 <label for="email">User email:</label>
                 <div *ngIf="isEdit" class="col-md-7">
-                    <input id="email" class="form-control" type="email" value="{{user.email}}">
+                    <input id="email" class="form-control" type="email" [(ngModel)]="user.email">
                 </div>
                 <div *ngIf="!isEdit" class="col-md-7">
-                    <input id="email" class="form-control" type="email" value="{{user.email}}" disabled>
+                    <input id="email" class="form-control" type="email" [(ngModel)]="user.email" disabled>
                 </div>
             </div>
     

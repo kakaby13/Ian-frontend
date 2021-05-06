@@ -18,24 +18,24 @@
       <div class="form-group">
          <label for="content">Short description:</label>
          <div *ngIf="isEdit">
-            <input id="content" class="form-control" type="textarea" value="{{startup.content}}">
+            <input id="content" class="form-control" type="textarea" [(ngModel)]="startup.content">
          </div>
          <div *ngIf="!isEdit">
-            <input id="content" class="form-control" type="textarea" value="{{startup.content}}" disabled>
+            <input id="content" class="form-control" type="textarea" [(ngModel)]="startup.content" disabled>
          </div>
       </div>
       <div class="form-group">
          <label for="moneyNeeded">Money need:</label>
          <div *ngIf="isEdit" >
-            <input id="moneyNeeded" class="form-control" type="number" min="0" step="0.01" value="{{startup.moneyNeeded}}">
+            <input id="moneyNeeded" class="form-control" type="number" min="0" step="0.01" [(ngModel)]="startup.moneyNeeded">
          </div>
          <div *ngIf="!isEdit">
-            <input id="moneyNeeded" class="form-control" type="number" min="0" step="0.01" value="{{startup.moneyNeeded}}" disabled>
+            <input id="moneyNeeded" class="form-control" type="number" min="0" step="0.01" [(ngModel)]="startup.moneyNeeded" disabled>
          </div>
       </div>
       <div class="form-group">
          <label for="moneyCollected">Money:</label>
-         <input id="moneyCollected" class="form-control" type="number" min="0" step="0.01" value="{{startup.moneyColected}}" disabled>
+         <input id="moneyCollected" class="form-control" type="number" min="0" step="0.01" [(ngModel)]="startup.moneyColected" disabled>
       </div>
       <div class="row">
          <div class="col-md-10"></div>

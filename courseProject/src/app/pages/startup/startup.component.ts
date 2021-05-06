@@ -46,6 +46,6 @@ export class StartupComponent implements OnInit {
   }
 
   saveChanges() {
-    
+    this.startupService.Save(this.startup);
   }
 }

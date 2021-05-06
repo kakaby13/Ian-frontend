@@ -11,6 +11,10 @@ export class StartupService {
     ) {
     }
 
+    public Save(startup: Startup) {
+
+    }
+
     public GetAllStartups(): Startup[] {
         return Helper.GetRandomListOfSturtups();
     }
