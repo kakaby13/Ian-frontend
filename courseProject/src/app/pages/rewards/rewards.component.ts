@@ -7,7 +7,7 @@ import { CurentUserProvider } from 'src/app/services/CurentUserProvider';
 @Component({
   selector: 'app-rewards',
   templateUrl: './rewards.component.html',
-  styleUrls: ['./rewards.component.css']
+  styleUrls: ['./rewards.component.css', '../../styles.css']
 })
 export class RewardsComponent implements OnInit {
 

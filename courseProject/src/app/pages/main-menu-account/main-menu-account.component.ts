@@ -5,7 +5,7 @@ import { CurentUserProvider } from 'src/app/services/CurentUserProvider';
 @Component({
   selector: 'app-main-menu-account',
   templateUrl: './main-menu-account.component.html',
-  styleUrls: ['./main-menu-account.component.css']
+  styleUrls: ['./main-menu-account.component.css', '../../styles.css']
 })
 export class MainMenuAccountComponent implements OnInit {
 

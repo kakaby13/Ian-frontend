@@ -5,7 +5,7 @@ import { Startup } from 'src/app/models/Startup';
 @Component({
   selector: 'app-startup-table-item-component',
   templateUrl: './startup-table-item-component.component.html',
-  styleUrls: ['./startup-table-item-component.component.css']
+  styleUrls: ['./startup-table-item-component.component.css', '../../styles.css']
 })
 export class StartupTableItemComponentComponent implements OnInit {
 

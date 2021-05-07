@@ -6,7 +6,7 @@ import { Tag } from 'src/app/models/Tag';
 @Component({
   selector: 'app-tag-list',
   templateUrl: './tag-list.component.html',
-  styleUrls: ['./tag-list.component.css']
+  styleUrls: ['./tag-list.component.css', '../../styles.css']
 })
 export class TagListComponent implements OnInit {
 

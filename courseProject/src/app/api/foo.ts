@@ -14,7 +14,7 @@ export class Helper {
         user.id = id;
         user.name = "Bob";
         user.email = "qwe@gmail.com";
-        user.isAdmin = true;
+        user.isAdmin = false;
         user.money = 555;
         
         return user;

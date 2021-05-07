@@ -1,5 +1,9 @@
-.common-background {
+.common-background { /*in index.html*/
     background-color: WhiteSmoke;
+}
+
+.main-header-background {
+    background-color: DarkGray;
 }
 
 .item-tier-1 {
@@ -30,4 +34,13 @@
 
 .link-header {
     background-color: orangered;
+}
+
+.header-flex {
+    display: flex;
+    justify-content: center;
+}
+
+.list-items-margin {
+    margin-bottom: 7px;
 }

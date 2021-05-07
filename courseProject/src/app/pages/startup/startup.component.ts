@@ -10,7 +10,7 @@ import { CurentUserProvider } from 'src/app/services/CurentUserProvider';
 @Component({
   selector: 'app-startup',
   templateUrl: './startup.component.html',
-  styleUrls: ['./startup.component.css']
+  styleUrls: ['./startup.component.css', '../../styles.css']
 })
 export class StartupComponent implements OnInit {
 

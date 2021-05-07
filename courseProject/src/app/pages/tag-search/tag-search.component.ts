@@ -7,7 +7,7 @@ import { Startup } from 'src/app/models/Startup';
 @Component({
   selector: 'app-tag-search',
   templateUrl: './tag-search.component.html',
-  styleUrls: ['./tag-search.component.css']
+  styleUrls: ['./tag-search.component.css', '../../styles.css']
 })
 export class TagSearchComponent implements OnInit {
 

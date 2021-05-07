@@ -1,12 +1,14 @@
-<div class="news-item mx-auto col-md-8">
+<div class="item-tier-1 list-items-margin mx-auto col-md-8">
     <div class="row">
         <div class="col-6">
-            <a (click)="goToStartup()">
+            <label (click)="goToStartup()" class="link-header header-flex rounded">
                 {{news.header}}
-            </a>
+            </label>
         </div>
         <div class="col-6">
-            {{news.author}}
+            <label class="header-flex">
+                {{news.author}}
+            </label>
         </div>
     </div>
     <div class="news-item-content">

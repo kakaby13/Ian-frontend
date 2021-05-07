@@ -5,7 +5,7 @@ import { Singin } from 'src/app/models/Singin';
 @Component({
   selector: 'app-singin',
   templateUrl: './singin.component.html',
-  styleUrls: ['./singin.component.css']
+  styleUrls: ['./singin.component.css', '../../styles.css']
 })
 export class SinginComponent implements OnInit {
 

@@ -12,7 +12,7 @@ import { CurentUserProvider } from 'src/app/services/CurentUserProvider';
 @Component({
   selector: 'app-user-account',
   templateUrl: './user-account.component.html',
-  styleUrls: ['./user-account.component.css']
+  styleUrls: ['./user-account.component.css', '../../styles.css']
 })
 export class UserAccountComponent implements OnInit {
 
