@@ -9,7 +9,6 @@ import { NewsItemComponent } from './pages/news-item/news-item.component';
 import { AchievementsComponent } from './pages/achievements/achievements.component';
 import { UrlProvider } from './api/router';
 import { NewsService } from './api/news.service';
-import { AchievementService } from './api/achievement.service';
 import { StartupService } from './api/startup.service';
 import { UserService } from './api/user.service';
 import { StartupTableComponentComponent } from './pages/startup-table-component/startup-table-component.component';
@@ -76,7 +75,6 @@ const appRoutes: Routes = [
     NewsService,
     UrlProvider,
     TagService,
-    AchievementService,
     StartupService,
     UserService
   ],

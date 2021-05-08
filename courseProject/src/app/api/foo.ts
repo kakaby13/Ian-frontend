@@ -1,5 +1,4 @@
 import { Injectable } from "@angular/core";
-import { Achievement } from "../models/Achievement";
 import { News } from "../models/News";
 import { Reward } from "../models/Reward";
 import { Startup } from "../models/Startup";
@@ -24,17 +23,17 @@ export class Helper {
         let foo: News = 
         {
           startupId: 13,
-          author: 'Автор',
           content: 'Контент новости',
           header: 'Заголовок'
         }
         return [foo,foo,foo,foo,foo,foo,foo,foo,foo];
     }
 
-    static GetRandomAchivements() :  Achievement[] {
-        var ach = new  Achievement();
+    static GetRandomAchivements() :  Reward[] {
+        var ach = new  Reward();
         ach.id = 123;
-        ach.name = "ach name";
+        ach.text = "ach name";
+        ach.money = 123;
 
         return [ach,ach,ach,ach,ach,ach,ach,ach,ach];
     }
@@ -43,7 +42,6 @@ export class Helper {
         var startup = new Startup();
 
         startup.id = 1;
-        startup.achievements = Helper.GetRandomAchivements();
         startup.tags = this.GetRandomTags();
         startup.author = Helper.GetUserById(1);
         startup.header = "Best startup inn the world"
@@ -65,14 +63,12 @@ export class Helper {
 
         reward.id = 1;
         reward.money = 123;
-        reward.startupId = startupId;
         reward.text = "Fosfaksdomfkasd";
 
         let reward1 = new Reward();
 
         reward1.id = 2;
         reward1.money = 123;
-        reward1.startupId = startupId;
         reward1.text = "Fosfaksdomfkasd";
 
         return [reward, reward1];

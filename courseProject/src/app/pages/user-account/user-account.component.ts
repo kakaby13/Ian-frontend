@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { AchievementService } from 'src/app/api/achievement.service';
+import { RewardService } from 'src/app/api/reward.service';
 import { StartupService } from 'src/app/api/startup.service';
 import { UserService } from 'src/app/api/user.service';
-import { Achievement } from 'src/app/models/Achievement';
+import { Reward } from 'src/app/models/Reward';
 import { Startup } from 'src/app/models/Startup';
 import { User } from 'src/app/models/User';
 import { CurentUserProvider } from 'src/app/services/CurentUserProvider';
@@ -23,13 +23,13 @@ export class UserAccountComponent implements OnInit {
   user: User;
   isEdit: boolean;
   isOwner: boolean;
-  userAchivements: Achievement[]; 
+  userAchivements: Reward[]; 
   subscription: Subscription; 
 
   constructor(
     private readonly startupService: StartupService,
     private readonly userService: UserService,
-    private readonly achivementService: AchievementService,
+    private readonly achivementService: RewardService,
     private readonly currentUserProvider: CurentUserProvider,
     private activateRoute: ActivatedRoute,
     private readonly router: Router,
@@ -52,7 +52,7 @@ export class UserAccountComponent implements OnInit {
 
     this.startupsCreatedByUser = this.startupService.GetSturtupsCreatedByUser(this.user.id);
     this.sturtupsFinancedByUser = this.startupService.GetSturtupsFinancedByUser(this.user.id);
-    this.userAchivements = this.achivementService.GetAchivementsByUserId(this.user.id);
+    this.userAchivements = this.achivementService.GetRewardsByUserId(this.user.id);
     this.isEdit = this.user.isAdmin || this.user.id == curentUser.id;
     this.isOwner = this.user.id == curentUser.id;
   }

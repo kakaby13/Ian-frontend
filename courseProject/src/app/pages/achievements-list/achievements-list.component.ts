@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Achievement } from 'src/app/models/Achievement';
+import { Reward } from 'src/app/models/Reward';
 
 @Component({
   selector: 'app-achievements-list',
@@ -9,10 +9,10 @@ import { Achievement } from 'src/app/models/Achievement';
 export class AchievementsListComponent implements OnInit {
 
   @Input()
-  achievementsList: Achievement[];
+  achievementsList: Reward[];
 
   @Input()
-  chosedAchievementsList: Achievement[];
+  chosedAchievementsList: Reward[];
   optionsSelect: Array<any>;
 
   constructor(

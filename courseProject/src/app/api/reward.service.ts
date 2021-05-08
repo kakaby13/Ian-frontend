@@ -12,8 +12,16 @@ export class RewardService {
         return [];
     }
 
+    public GetAllRewards(): Reward[] {
+        return [];
+    }
+    
     public RemoveRewardById(rewardId: number) {
 
+    }
+
+    public GetRewardsByUserId(userId: number): Reward[] {
+        return [];
     }
 
     public UnlockReward(rewardId: number, userId: number) {

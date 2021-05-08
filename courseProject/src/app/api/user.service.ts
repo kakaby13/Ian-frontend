@@ -19,11 +19,15 @@ export class UserService {
     }
 
     public GetUserById(id: number): Promise<User> {
-        return this.http.get<User>(UrlProvider.host + this.controllerUrl + '/GetById').toPromise();
+
+        let user = {};
+        return this.http.post<User>(UrlProvider.host + this.controllerUrl + '/SaveUser', user).toPromise();
     }
 
     public SaveUserInfo(user: User) {
         //save
+        return this.http.post<User>(UrlProvider.host + this.controllerUrl + '/SaveUser', user).toPromise();
+
         //assert that it saved
         this.curentUserProvider.SaveCurrentUser(user);
     }
