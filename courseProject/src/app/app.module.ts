@@ -28,8 +28,9 @@ import { FormsModule } from '@angular/forms';
 import { RewardsComponent } from './pages/rewards/rewards.component';
 import { RewardService } from './api/reward.service';
 import { TagSearchComponent } from './pages/tag-search/tag-search.component';
+import {HttpClientModule} from '@angular/common/http';
 
-const appRoutes: Routes =[
+const appRoutes: Routes = [
   {path: '', component: NewsTableComponent},
   {path: 'account/:userId', component: UserAccountComponent},
   {path: 'account', component: UserAccountComponent},
@@ -39,7 +40,7 @@ const appRoutes: Routes =[
   {path: 'create-startup', component: StartupComponent},
   {path: 'tagsearch/:tag', component: TagSearchComponent},
 
-]
+];
 
 @NgModule({
   declarations: [
@@ -64,7 +65,9 @@ const appRoutes: Routes =[
     FormsModule,
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+
+    HttpClientModule,
   ],
   providers: [
     RewardService,

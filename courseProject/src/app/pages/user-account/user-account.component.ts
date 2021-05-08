@@ -42,7 +42,7 @@ export class UserAccountComponent implements OnInit {
       this.userId = curentUser.id;
       this.user = curentUser;
     } else {
-      this.user = this.userService.GetUserById(this.userId);
+      this.userService.GetUserById(this.userId).then((q) => this.user = q);
     }
     this.startupsCreatedByUser = this.startupService.GetSturtupsCreatedByUser(this.user.id);
     this.sturtupsFinancedByUser = this.startupService.GetSturtupsFinancedByUser(this.user.id);
