@@ -35,6 +35,10 @@ export class UserAccountComponent implements OnInit {
     private readonly router: Router,
 
   ) { 
+
+  }
+
+  async ngOnInit() {
     this.subscription = this.activateRoute.params.subscribe(params=>this.userId=params['userId']);
     let curentUser = this.currentUserProvider.GetCurrentUser();
 
@@ -42,16 +46,15 @@ export class UserAccountComponent implements OnInit {
       this.userId = curentUser.id;
       this.user = curentUser;
     } else {
-      this.userService.GetUserById(this.userId).then((q) => this.user = q);
+      this.user = await this.userService.GetUserById(this.userId);
     }
+    alert(this.user);
+
     this.startupsCreatedByUser = this.startupService.GetSturtupsCreatedByUser(this.user.id);
     this.sturtupsFinancedByUser = this.startupService.GetSturtupsFinancedByUser(this.user.id);
     this.userAchivements = this.achivementService.GetAchivementsByUserId(this.user.id);
     this.isEdit = this.user.isAdmin || this.user.id == curentUser.id;
     this.isOwner = this.user.id == curentUser.id;
-  }
-
-  ngOnInit(): void {
   }
 
   public addMoneyToBalance() {

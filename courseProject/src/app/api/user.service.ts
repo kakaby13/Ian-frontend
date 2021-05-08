@@ -4,9 +4,13 @@ import { User } from "../models/User";
 import { CurentUserProvider } from "../services/CurentUserProvider";
 import { Helper } from "./foo";
 import {HttpClient} from '@angular/common/http';
+import { UrlProvider } from "./router";
 
 @Injectable()
 export class UserService {
+
+    controllerUrl: string = 'Account'
+
     constructor(
         private readonly http: HttpClient,
         private readonly router: Router,
@@ -14,11 +18,8 @@ export class UserService {
     ) {
     }
 
-    public async GetUserById(id: number): Promise<User> {
-
-      const user = await this.http.get<User>('http://localhost:8080/account').toPromise();
-
-      return user;
+    public GetUserById(id: number): Promise<User> {
+        return this.http.get<User>(UrlProvider.host + this.controllerUrl + '/GetById').toPromise();
     }
 
     public SaveUserInfo(user: User) {
