@@ -23,8 +23,8 @@ export class UserAccountComponent implements OnInit {
   user: User;
   isEdit: boolean;
   isOwner: boolean;
-  userAchivements: Achievement[]; 
-  subscription: Subscription; 
+  userAchivements: Achievement[];
+  subscription: Subscription;
 
   constructor(
     private readonly startupService: StartupService,
@@ -34,7 +34,7 @@ export class UserAccountComponent implements OnInit {
     private activateRoute: ActivatedRoute,
     private readonly router: Router,
 
-  ) { 
+  ) {
     this.subscription = this.activateRoute.params.subscribe(params=>this.userId=params['userId']);
     let curentUser = this.currentUserProvider.GetCurrentUser();
 
@@ -47,7 +47,7 @@ export class UserAccountComponent implements OnInit {
     this.startupsCreatedByUser = this.startupService.GetSturtupsCreatedByUser(this.user.id);
     this.sturtupsFinancedByUser = this.startupService.GetSturtupsFinancedByUser(this.user.id);
     this.userAchivements = this.achivementService.GetAchivementsByUserId(this.user.id);
-    this.isEdit = this.user.isAdmin || this.user.id == curentUser.id;
+    this.isEdit = this.user.adminFlag || this.user.id == curentUser.id;
     this.isOwner = this.user.id == curentUser.id;
   }
 

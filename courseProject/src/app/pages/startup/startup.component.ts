@@ -32,13 +32,13 @@ export class StartupComponent implements OnInit {
 
       let currentUser = this.curentUserProvider.GetCurrentUser();
 
-      this.startup = this.id == null 
+      this.startup = this.id == null
         ? this.getNewStartup()
         : this.startupService.GetStartupById(this.id);
 
       this.isStartupExist = this.startup.id != 0;
 
-      this.isEdit = currentUser.id == this.startup?.author?.id || currentUser.isAdmin;
+      this.isEdit = currentUser.id == this.startup?.author?.id || currentUser.adminFlag;
 
       this.achievementsList = this.achievementService.GetAllAchivements();
       this.chosedAchievementsList = this.achievementService.GetAvailableAchivementsByStartupId(this.startup.id);

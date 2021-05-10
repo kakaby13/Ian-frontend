@@ -14,14 +14,14 @@ export class Helper {
         user.id = id;
         user.name = "Bob";
         user.email = "qwe@gmail.com";
-        user.isAdmin = false;
+        user.adminFlag = false;
         user.money = 555;
-        
+
         return user;
     }
 
     static GetNews(): News[] {
-        let foo: News = 
+        let foo: News =
         {
           startupId: 13,
           author: 'Автор',
