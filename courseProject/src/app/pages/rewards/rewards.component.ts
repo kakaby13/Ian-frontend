@@ -31,14 +31,14 @@ export class RewardsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public addReward() {
+  public async addReward() {
     let reward = new Reward();
     reward.startupId = this.startup.id;
     reward.text = this.newRewardText;
     reward.money = this.newRewardMoney;
 
     let justAddedReward = this.rewardsService.AddNewRewardIfNotExist(reward);
-    this.startup.rewards.push(justAddedReward);
+    this.startup.rewards.push(await justAddedReward);
 
     this.newRewardText = "";
     this.newRewardMoney = 0;

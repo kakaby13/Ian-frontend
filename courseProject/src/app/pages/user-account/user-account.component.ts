@@ -50,9 +50,9 @@ export class UserAccountComponent implements OnInit {
     }
     alert(this.user);
 
-    this.startupsCreatedByUser = this.startupService.GetSturtupsCreatedByUser(this.user.id);
-    this.sturtupsFinancedByUser = this.startupService.GetSturtupsFinancedByUser(this.user.id);
-    this.userAchivements = this.achivementService.GetRewardsByUserId(this.user.id);
+    this.startupsCreatedByUser = await this.startupService.GetSturtupsCreatedByUser(this.user.id);
+    this.sturtupsFinancedByUser = await  this.startupService.GetSturtupsFinancedByUser(this.user.id);
+    this.userAchivements = await this.achivementService.GetRewardsByUserId(this.user.id);
     this.isEdit = this.user.isAdmin || this.user.id == curentUser.id;
     this.isOwner = this.user.id == curentUser.id;
   }

@@ -41,7 +41,7 @@ export class TagListComponent implements OnInit {
   }
 
   deleteTag(tag: string) {
-    this.tagService.DeleteTag(tag);
+    this.tagService.DeleteTag(tag, this.startupId);
     this.tags = this.tags.filter(c => c.text !== tag);
   }
 }

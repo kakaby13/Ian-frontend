@@ -28,24 +28,24 @@ export class StartupComponent implements OnInit {
     private activateRoute: ActivatedRoute,
     private readonly curentUserProvider: CurentUserProvider,
   ) {
-      this.subscription = this.activateRoute.params.subscribe(params=>this.id=params['id']);
+      
+   }
+
+  async ngOnInit() {
+    this.subscription = this.activateRoute.params.subscribe(params=>this.id=params['id']);
 
       let currentUser = this.curentUserProvider.GetCurrentUser();
 
       this.startup = this.id == null 
         ? this.getNewStartup()
-        : this.startupService.GetStartupById(this.id);
+        : await this.startupService.GetStartupById(this.id);
 
       this.isStartupExist = this.startup.id != 0;
 
       this.isEdit = currentUser.id == this.startup?.author?.id || currentUser.isAdmin;
 
-      this.achievementsList = this.achievementService.GetAllRewards();
-      this.chosedAchievementsList = this.achievementService.GetRewardsByStartupId(this.startup.id);
-
-   }
-
-  ngOnInit(): void {
+      this.achievementsList = await this.achievementService.GetAllRewards();
+      this.chosedAchievementsList = await this.achievementService.GetRewardsByStartupId(this.startup.id);
   }
 
   saveChanges() {

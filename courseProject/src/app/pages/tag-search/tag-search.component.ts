@@ -19,13 +19,11 @@ export class TagSearchComponent implements OnInit {
     private readonly startupService: StartupService,
     private activateRoute: ActivatedRoute,
   ) { 
+  }
 
+  async ngOnInit() {
     this.subscription = this.activateRoute.params.subscribe(params=>this.tag=params['tag']);
 
-    this.startups = this.startupService.GetStartupsByTag(this.tag);
+    this.startups = await this.startupService.GetStartupsByTag(this.tag);
   }
-
-  ngOnInit(): void {
-  }
-
 }
