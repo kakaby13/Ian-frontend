@@ -1,3 +1,3 @@
 export class UrlProvider {
-    static host: string = "http://localhost:8080/";
+    static host: string = "https://courseproject-itranzition.azurewebsites.net/";
 }
