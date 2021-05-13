@@ -11,7 +11,6 @@ export class UserService {
 
     constructor(
         private readonly http: HttpClient,
-        private readonly curentUserProvider: CurentUserProvider,
     ) {
     }
 
@@ -28,6 +27,6 @@ export class UserService {
         this.http.post(UrlProvider.host + this.controllerUrl + '/createUser', user).toPromise();
 
         //assert that it saved
-        this.curentUserProvider.SaveCurrentUser(user);
+        CurentUserProvider.Instance.SaveCurrentUser(user);
     }
 }

@@ -18,7 +18,6 @@ import { AchievementsListComponent } from './pages/achievements-list/achievement
 import { TagListComponent } from './pages/tag-list/tag-list.component';
 import { TagService } from './api/tag.service';
 import { MainMenuAccountComponent } from './pages/main-menu-account/main-menu-account.component';
-import { CurentUserProvider } from './services/CurentUserProvider';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { SinginComponent } from './pages/singin/singin.component';
@@ -71,7 +70,6 @@ const appRoutes: Routes = [
   providers: [
     RewardService,
     AuthService,
-    CurentUserProvider,
     NewsService,
     UrlProvider,
     TagService,

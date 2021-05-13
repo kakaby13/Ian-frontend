@@ -22,7 +22,6 @@ export class RewardsComponent implements OnInit {
 
   constructor(
     private readonly rewardsService: RewardService,
-    private readonly curentUserProvider: CurentUserProvider,
   ) { 
     this.newRewardText = "";
     this.newRewardMoney = 0;
@@ -50,6 +49,6 @@ export class RewardsComponent implements OnInit {
   }
 
   public unlockReward(rewardId: number) {
-    this.rewardsService.UnlockReward(rewardId, this.curentUserProvider.GetCurrentUser().id);
+    this.rewardsService.UnlockReward(rewardId, CurentUserProvider.Instance.GetCurrentUser().id);
   }
 }

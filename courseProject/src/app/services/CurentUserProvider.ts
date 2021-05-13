@@ -3,7 +3,6 @@ import { Helper } from "../api/foo";
 import { User } from "../models/User";
 
 
-@Injectable()
 export class CurentUserProvider {
 
 
@@ -22,6 +21,18 @@ export class CurentUserProvider {
 
     public GetUserToken() {
 
+    }
+
+    private static _instance: CurentUserProvider;
+    private constructor()
+    {
+        //...
+    }
+
+    public static get Instance()
+    {
+        // Do you need arguments? Make it a regular static method instead.
+        return this._instance || (this._instance = new this());
     }
 
 }

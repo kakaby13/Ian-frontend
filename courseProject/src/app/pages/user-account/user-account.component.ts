@@ -30,7 +30,6 @@ export class UserAccountComponent implements OnInit {
     private readonly startupService: StartupService,
     private readonly userService: UserService,
     private readonly achivementService: RewardService,
-    private readonly currentUserProvider: CurentUserProvider,
     private activateRoute: ActivatedRoute,
     private readonly router: Router,
 
@@ -40,7 +39,7 @@ export class UserAccountComponent implements OnInit {
 
   async ngOnInit() {
     this.subscription = this.activateRoute.params.subscribe(params=>this.userId=params['userId']);
-    let curentUser = this.currentUserProvider.GetCurrentUser();
+    let curentUser = CurentUserProvider.Instance.GetCurrentUser();
 
     if(this.userId == undefined) {
       this.userId = curentUser.id;
@@ -58,7 +57,7 @@ export class UserAccountComponent implements OnInit {
   }
 
   public addMoneyToBalance() {
-    let currentUser = this.currentUserProvider.GetCurrentUser();
+    let currentUser = CurentUserProvider.Instance.GetCurrentUser();
     currentUser.money += 1000;
     this.userService.SaveUserInfo(currentUser);
   }

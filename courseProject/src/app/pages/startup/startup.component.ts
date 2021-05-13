@@ -26,7 +26,6 @@ export class StartupComponent implements OnInit {
     private readonly startupService: StartupService,
     private readonly achievementService: RewardService,
     private activateRoute: ActivatedRoute,
-    private readonly curentUserProvider: CurentUserProvider,
   ) {
       
    }
@@ -34,7 +33,7 @@ export class StartupComponent implements OnInit {
   async ngOnInit() {
     this.subscription = this.activateRoute.params.subscribe(params=>this.id=params['id']);
 
-      let currentUser = this.curentUserProvider.GetCurrentUser();
+      let currentUser = CurentUserProvider.Instance.GetCurrentUser();
 
       this.startup = this.id == null 
         ? this.getNewStartup()
@@ -55,7 +54,7 @@ export class StartupComponent implements OnInit {
   private getNewStartup() : Startup {
     let startup = new Startup();
     startup.id = 0;
-    startup.author = this.curentUserProvider.GetCurrentUser();
+    startup.author = CurentUserProvider.Instance.GetCurrentUser();
 
     return startup;
   }

@@ -14,14 +14,11 @@ export class MainMenuAccountComponent implements OnInit {
   isUserLoged: boolean;
 
   
-  constructor(
-    private readonly curentUserProvider: CurentUserProvider,
-  ) {
-    this.isUserLoged = this.curentUserProvider.IsUserLogedIn();
-   }
+  constructor() { }
 
   ngOnInit(): void {
-    
+    this.isUserLoged = CurentUserProvider.Instance.IsUserLogedIn();
+
   }
 
 }
