@@ -14,7 +14,7 @@ export class StartupService {
     }
 
     public Save(startup: Startup) {
-        this.http.post(UrlProvider.host + this.controllerUrl + '/save', startup).toPromise();
+        this.http.post(UrlProvider.host + this.controllerUrl + '/saveStartup', startup).toPromise();
     }
 
     public GetAllStartups(): Promise<Startup[]> {
@@ -30,7 +30,7 @@ export class StartupService {
     }
 
     public GetSturtupsCreatedByUser(id: number): Promise<Startup[]> {
-        return this.http.get<Startup[]>(UrlProvider.host + this.controllerUrl + '/getSturtupsCreatedByUser',{
+        return this.http.get<Startup[]>(UrlProvider.host + this.controllerUrl + '/getStartupsCreatedByUser',{
             params: {
               id: id.toString()
             }
@@ -38,7 +38,7 @@ export class StartupService {
     }
 
     public GetSturtupsFinancedByUser(id: number): Promise<Startup[]> {
-        return this.http.get<Startup[]>(UrlProvider.host + this.controllerUrl + '/getSturtupsFinancedByUser',{
+        return this.http.get<Startup[]>(UrlProvider.host + this.controllerUrl + '/getStartupsFinancedByUser',{
             params: {
               id: id.toString()
             }
@@ -46,7 +46,7 @@ export class StartupService {
     }
 
     public GetStartupsByTag(tag: string): Promise<Startup[]> {
-        return this.http.get<Startup[]>(UrlProvider.host + this.controllerUrl + '/getStartupsByTag',{
+        return this.http.get<Startup[]>(UrlProvider.host + this.controllerUrl + '/getStartupsByTagName',{
             params: {
                 tag: tag
             }

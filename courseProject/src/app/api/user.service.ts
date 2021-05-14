@@ -24,7 +24,7 @@ export class UserService {
 
     public SaveUserInfo(user: User) {
         //save
-        this.http.post(UrlProvider.host + this.controllerUrl + '/createUser', user).toPromise();
+        this.http.post(UrlProvider.host + this.controllerUrl + '/saveUser', user).toPromise();
 
         //assert that it saved
         CurentUserProvider.Instance.SaveCurrentUser(user);

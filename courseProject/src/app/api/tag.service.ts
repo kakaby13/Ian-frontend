@@ -22,7 +22,7 @@ export class TagService {
     }
 
     public SaveTagIfNotExist(tag: string, startupId: number) {
-        return this.http.get(UrlProvider.host + this.controllerUrl + '/saveTagIfNotExist',{
+        return this.http.get(UrlProvider.host + this.controllerUrl + '/addTagToStartup',{
             params: {
                 tag: tag,
                 startupId: startupId.toString()
@@ -31,7 +31,7 @@ export class TagService {
     }
 
     public DeleteTag(tag: string, startupId: number) {
-        return this.http.get(UrlProvider.host + this.controllerUrl + '/deleteTag',{
+        return this.http.get(UrlProvider.host + this.controllerUrl + '/deleteTagFromStartup',{
             params: {
                 tag: tag,
                 startupId: startupId.toString()
