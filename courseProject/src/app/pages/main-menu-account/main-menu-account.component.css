@@ -1,8 +1,9 @@
-.foo {
-    background-color: aqua;
-}
-
 .account-buttons-block {
     display: flex;
     justify-content: flex-end;
+    margin: 10px;
+}
+
+.my-button {
+    margin-left: 10px;
 }

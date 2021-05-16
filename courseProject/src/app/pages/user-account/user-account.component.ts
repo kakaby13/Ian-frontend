@@ -47,7 +47,6 @@ export class UserAccountComponent implements OnInit {
     } else {
       this.user = await this.userService.GetUserById(this.userId);
     }
-    alert(this.user);
 
     this.startupsCreatedByUser = await this.startupService.GetSturtupsCreatedByUser(this.user.id);
     this.sturtupsFinancedByUser = await  this.startupService.GetSturtupsFinancedByUser(this.user.id);

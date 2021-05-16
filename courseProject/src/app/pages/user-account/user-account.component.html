@@ -1,7 +1,8 @@
 <div>
-    <div class="profile row">
+    <div class="row">
+        <div class="col-md-1"></div>
         <div class="col-md-6">
-            <div class="form-group">
+            <div class="form-group">                
                 <label for="name">User name:</label>
                 <div *ngIf="isEdit" class="col-md-7">
                     <input id="name" class="form-control" type="text" [(ngModel)]="user.name">

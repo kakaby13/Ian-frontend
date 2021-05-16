@@ -1,19 +1,19 @@
-<div class="foo">
+<div>
     <div *ngIf="!isUserLoged" class="account-buttons-block">
         <div>
             <a routerLink="/Signin" ><button class="btn btn-success" type="submit">Sign in</button></a>
         </div>
         <div>
-            <a routerLink="/Login" ><button class="btn btn-success" type="submit">Log in</button></a>
+            <a routerLink="/Login" ><button class="btn btn-success my-button" type="submit">Log in</button></a>
         </div>
     </div>
 
     <div *ngIf="isUserLoged" class="account-buttons-block">
         <div>
-            <a routerLink="/account"><button class="btn btn-success" type="submit">Profile</button></a>
+            <a routerLink="/account"><button class="btn btn-success" type="submit">{{user.name}}</button></a>
         </div>
         <div >
-            <button class="btn btn-success" type="submit">Log out</button>
+            <button class="btn btn-success my-button" type="submit">Log out</button>
         </div>
     </div>
 </div>
