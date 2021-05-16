@@ -20,14 +20,6 @@ export class CurentUserProvider {
         localStorage.setItem('userid', userid.toString());
     }
 
-    public GetJwt(): string {
-        return String(localStorage.getItem("jwt") || null);
-    }
-
-    public SaveJwt(token: string) {
-        localStorage.setItem('jwt', token);
-    }
-
     public IsUserLogedIn(): boolean {
         return this.GetCurrentUserId() !== 0;
     }
@@ -39,7 +31,6 @@ export class CurentUserProvider {
     public LogOut() {
         localStorage.setItem('user', '');
         localStorage.setItem('userid','0');
-        localStorage.setItem('jwt', '');
     }
 
     public GetUserToken() {

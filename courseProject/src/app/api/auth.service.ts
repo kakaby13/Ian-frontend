@@ -2,8 +2,10 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Login } from "../models/Login";
 import { Singin } from "../models/Singin";
+import { User } from "../models/User";
 
 import { UrlProvider } from "./router";
+import { CurentUserProvider} from "../services/CurentUserProvider";
 
 
 
@@ -15,11 +17,13 @@ export class AuthService {
     ) {
     }
 
-    public Signin(signin: Singin) {
-        this.http.post(UrlProvider.host + '/login', signin).toPromise();
+    public async Signin(signin: Singin) {
+        var user = this.http.post<User>(UrlProvider.host + '/login', signin).toPromise();
+        CurentUserProvider.Instance.SaveCurrentUser(await user);
     }
 
-    public Login(login: Login) {
-        this.http.post(UrlProvider.host + '/register', login).toPromise();
+    public async Login(login: Login) {
+        var user = this.http.post<User>(UrlProvider.host + '/register', login).toPromise();
+        CurentUserProvider.Instance.SaveCurrentUser(await user);
     }
 }
