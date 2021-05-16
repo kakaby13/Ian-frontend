@@ -1,18 +1,25 @@
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Login } from "../models/Login";
 import { Singin } from "../models/Singin";
-import { User } from "../models/User";
-import { Helper } from "./foo";
+
+import { UrlProvider } from "./router";
 
 
 
 @Injectable()
 export class AuthService {
-    public Signin(signin: Singin): User {
-        return Helper.GetUserById(5);
+
+    constructor(
+        private readonly http: HttpClient,
+    ) {
     }
 
-    public Login(login: Login): User {
-        return Helper.GetUserById(5);
+    public Signin(signin: Singin) {
+        this.http.post(UrlProvider.host + '/login', signin).toPromise();
+    }
+
+    public Login(login: Login) {
+        this.http.post(UrlProvider.host + '/register', login).toPromise();
     }
 }

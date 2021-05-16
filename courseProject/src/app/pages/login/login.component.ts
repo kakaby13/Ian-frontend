@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   public login() {
     let login = new Login();
 
-    login.login = this.username;
+    login.username = this.username;
     login.password = this.password;
 
     this.authService.Login(login);

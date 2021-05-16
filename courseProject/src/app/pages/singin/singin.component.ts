@@ -23,7 +23,7 @@ export class SinginComponent implements OnInit {
   public signin() {
     let singin = new Singin();
 
-    singin.username = this.username;
+    singin.name = this.username;
     singin.email = this.email;
     singin.password = this.password;
 
